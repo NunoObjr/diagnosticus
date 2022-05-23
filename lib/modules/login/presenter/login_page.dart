@@ -1,6 +1,5 @@
 import 'package:diagnosticus_action_iv/core/widgets/custom_button.dart';
 import 'package:diagnosticus_action_iv/core/widgets/custom_input.dart';
-import 'package:diagnosticus_action_iv/routes/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'login_controller.dart';
@@ -83,20 +82,24 @@ class LoginPage extends GetView<LoginController> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           CustomInputWidget(
-                            label: 'E-mail',
+                            label: 'Username',
+                            controller: controller.username,
                           ),
                           CustomInputWidget(
                             label: 'Senha',
                             isPassword: true,
+                            controller: controller.password,
                           ),
-                          Container(
+                          Obx(() => Container(
                               width: double.infinity,
+                              height: 40,
                               child: CustomButtonWidget(
                                 label: 'Entrar',
                                 onPressed: () {
-                                  Get.offNamed(DiagnosticusPages.homeStudent);
+                                  controller.login();
                                 },
-                              )),
+                                isLoading: controller.isLoading.value,
+                              ))),
                           Column(
                             children: [
                               Text(

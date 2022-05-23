@@ -17,7 +17,7 @@ class HomeStudentPage extends GetView<HomeStudentController> {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 38.0),
+            padding: const EdgeInsets.only(top: 28.0),
             child: Column(
               children: [
                 Row(
