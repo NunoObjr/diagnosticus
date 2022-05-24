@@ -1,5 +1,6 @@
 import 'package:diagnosticus_action_iv/modules/login/datasource/login_datasource.dart';
 import 'package:diagnosticus_action_iv/routes/routes.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,7 @@ class LoginController extends GetxController with StateMixin<String> {
           userName: username.text, password: password.text);
       await Get.offNamed(DiagnosticusRoutes.homeStudent);
       isLoading.value = false;
-    } catch (e) {
+    } on DioError {
       isLoading.value = false;
     }
   }

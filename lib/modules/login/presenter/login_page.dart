@@ -63,9 +63,11 @@ class LoginPage extends GetView<LoginController> {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(100))),
                           child: Center(
-                              child: Text(
-                            'Logo',
-                            style: TextStyle(color: Colors.black, fontSize: 24),
+                              child: Image.asset(
+                            'assets/icons/coracao.png',
+                            width: 80,
+                            height: 120,
+                            color: Colors.white,
                           )),
                         ),
                       ],

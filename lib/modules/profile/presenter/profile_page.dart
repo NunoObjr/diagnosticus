@@ -23,7 +23,7 @@ class ProfilePage extends GetView<ProfileController> {
             top: 70,
             child: InkWell(
               onTap: () {
-                Get.offNamed(DiagnosticusRoutes.homeStudent);
+                Get.offAllNamed(DiagnosticusRoutes.homeStudent);
               },
               child: Row(
                 children: [

@@ -28,6 +28,9 @@ class HomeStudentPage extends GetView<HomeStudentController> {
                       color: Colors.white,
                       icon: Icons.add_circle_outline,
                       iconColor: Color(0xFF0B10DB),
+                      onTap: () {
+                        Get.toNamed(DiagnosticusRoutes.cases, arguments: false);
+                      },
                     ),
                     _IconPhoneWidget(
                       text: 'Meus Casos',
@@ -41,6 +44,9 @@ class HomeStudentPage extends GetView<HomeStudentController> {
                       text: 'Ver Pontuação',
                       color: Colors.red,
                       icon: Icons.star_border_outlined,
+                      onTap: () {
+                        Get.toNamed(DiagnosticusRoutes.pontuation);
+                      },
                     )
                   ],
                 ),
@@ -53,6 +59,9 @@ class HomeStudentPage extends GetView<HomeStudentController> {
                         text: 'Buscar Turma',
                         color: Colors.blue,
                         icon: Icons.groups,
+                        onTap: () {
+                          Get.toNamed(DiagnosticusRoutes.classes);
+                        },
                       ),
                       _IconPhoneWidget(
                         text: 'Meu Perfil',
@@ -66,6 +75,9 @@ class HomeStudentPage extends GetView<HomeStudentController> {
                         text: 'Sobre',
                         color: Colors.grey,
                         icon: Icons.info,
+                        onTap: () {
+                          Get.toNamed(DiagnosticusRoutes.about);
+                        },
                       )
                     ],
                   ),
@@ -130,9 +142,9 @@ class _IconPhoneWidget extends StatelessWidget {
       onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: SizedBox(
+        child: Container(
           width: 100,
-          height: 140,
+          height: 160,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -156,7 +168,7 @@ class _IconPhoneWidget extends StatelessWidget {
               if (text != null)
                 Text(
                   text!,
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: TextStyle(fontSize: 15, color: Colors.white),
                   textAlign: TextAlign.center,
                 )
             ],

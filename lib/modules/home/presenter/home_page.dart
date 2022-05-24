@@ -8,61 +8,62 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: ExactAssetImage('assets/background.jpeg'),
-                  fit: BoxFit.cover)),
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 18.0),
-                child: Text(
-                  'Logo',
-                  style: TextStyle(fontSize: 24),
+    return Scaffold(
+      backgroundColor: Colors.purple,
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: ExactAssetImage('assets/background.jpeg'),
+                fit: BoxFit.cover)),
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 18.0),
+              child: Center(
+                  child: Image.asset(
+                'assets/icons/coracao.png',
+                width: 80,
+                height: 120,
+                color: Colors.white,
+              )),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 60, top: 8),
+              child: Text(
+                'Diagnosticus Action IV',
+                style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.white,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 60, top: 8),
-                child: Text(
-                  'Diagnosticus Action IV',
-                  style: TextStyle(
-                    fontSize: 32,
-                    color: Colors.white,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
+              height: 180,
+              width: 260,
+              child: Column(
+                children: [
+                  _BoardOption(
+                    text: 'Criar conta',
+                    page: DiagnosticusRoutes.home,
                   ),
-                ),
+                  _BoardOption(
+                    text: 'Entrar como professor',
+                    page: DiagnosticusRoutes.login,
+                  ),
+                  _BoardOption(
+                    text: 'Entrar como aluno',
+                    isLast: true,
+                    page: DiagnosticusRoutes.login,
+                  ),
+                ],
               ),
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
-                height: 180,
-                width: 260,
-                child: Column(
-                  children: [
-                    _BoardOption(
-                      text: 'Criar conta',
-                      page: DiagnosticusRoutes.home,
-                    ),
-                    _BoardOption(
-                      text: 'Entrar como professor',
-                      page: DiagnosticusRoutes.login,
-                    ),
-                    _BoardOption(
-                      text: 'Entrar como aluno',
-                      isLast: true,
-                      page: DiagnosticusRoutes.login,
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );
@@ -81,7 +82,7 @@ class _BoardOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.offNamed(page);
+        Get.toNamed(page);
       },
       child: SizedBox(
         height: 60,

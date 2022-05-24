@@ -11,16 +11,16 @@ class LoginDatasource {
       var basicAuth =
           'Basic ' + base64Encode(utf8.encode('$userName:$password'));
 
-      final response = await DiagnosticusService.connection!
+      await DiagnosticusService.connection!
           .get('https://diagnosticus-action.herokuapp.com/login',
               options: Options(
                 headers: {
                   'authorization': basicAuth,
                 },
               ));
-      print(response);
     } on DioError catch (e) {
       debugPrint(e.message);
+      rethrow;
     }
   }
 }

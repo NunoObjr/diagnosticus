@@ -12,46 +12,52 @@ import 'package:diagnosticus_action_iv/modules/simulation/presenter/simulation_p
 import 'package:diagnosticus_action_iv/routes/routes.dart';
 import 'package:get/get.dart';
 
+import '../modules/about/presenter/about_binding.dart';
+import '../modules/about/presenter/about_page.dart';
+import '../modules/classes/presenter/classes_binding.dart';
+import '../modules/classes/presenter/classes_page.dart';
 import '../modules/login/presenter/login_page.dart';
-class DiagnosticusPages {
+import '../modules/pontuation/presenter/pontuation_binding.dart';
+import '../modules/pontuation/presenter/pontuation_page.dart';
 
+class DiagnosticusPages {
   static String home = DiagnosticusRoutes.home;
   static String login = DiagnosticusRoutes.login;
   static String cases = DiagnosticusRoutes.cases;
   static String profile = DiagnosticusRoutes.profile;
   static String simulation = DiagnosticusRoutes.simulation;
   static String homeStudent = DiagnosticusRoutes.homeStudent;
-  
+  static String about = DiagnosticusRoutes.about;
+  static String pontuation = DiagnosticusRoutes.pontuation;
+  static String classes = DiagnosticusRoutes.classes;
+
   static final routes = [
+    GetPage(name: home, page: () => const HomePage(), binding: HomeBinding()),
     GetPage(
-      name:  home, 
-      page: ()=> const HomePage(),
-      binding: HomeBinding()
-    ),
+        name: login, page: () => const LoginPage(), binding: LoginBinding()),
     GetPage(
-      name:  login, 
-      page: ()=> const LoginPage(),
-      binding: LoginBinding()
-    ),
+        name: cases, page: () => const CasesPage(), binding: CasesBinding()),
     GetPage(
-      name:  cases, 
-      page: ()=> const CasesPage(),
-      binding: CasesBinding()
-    ),
+        name: profile,
+        page: () => const ProfilePage(),
+        binding: ProfileBinding()),
     GetPage(
-      name:  profile, 
-      page: ()=> const ProfilePage(),
-      binding: ProfileBinding()
-    ),
+        name: simulation,
+        page: () => const SimulationPage(),
+        binding: SimulationBinding()),
     GetPage(
-      name:  simulation, 
-      page: ()=> const SimulationPage(),
-      binding: SimulationBinding()
-    ),
+        name: homeStudent,
+        page: () => const HomeStudentPage(),
+        binding: HomeStudentBinding()),
     GetPage(
-      name:  homeStudent, 
-      page: ()=> const HomeStudentPage(),
-      binding: HomeStudentBinding()
-    ),
+        name: about, page: () => const AboutPage(), binding: AboutBinding()),
+    GetPage(
+        name: pontuation,
+        page: () => const PontuationPage(),
+        binding: PontuationBinding()),
+    GetPage(
+        name: classes,
+        page: () => const ClassesPage(),
+        binding: ClassesBinding()),
   ];
 }

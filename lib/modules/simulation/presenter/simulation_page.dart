@@ -24,7 +24,7 @@ class SimulationPage extends GetView<SimulationController> {
             top: 70,
             child: InkWell(
               onTap: () {
-                Get.offNamed(DiagnosticusRoutes.homeStudent);
+                Get.offAllNamed(DiagnosticusRoutes.homeStudent);
               },
               child: Row(
                 children: [
@@ -49,7 +49,7 @@ class SimulationPage extends GetView<SimulationController> {
             left: 18.0,
             right: 18.0,
             child: Container(
-              height: 690,
+              height: 600,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -180,6 +180,7 @@ class PageContent extends StatelessWidget {
           children: [
             Container(
               width: 300,
+              height: 200,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.white,

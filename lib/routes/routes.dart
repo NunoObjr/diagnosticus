@@ -5,4 +5,7 @@ class DiagnosticusRoutes {
   static const simulation = '/simulation';
   static const profile = '/profile';
   static const cases = '/cases';
+  static const about = '/about';
+  static const pontuation = '/pontuation';
+  static const classes = '/classes';
 }
