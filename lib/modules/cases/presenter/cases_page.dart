@@ -23,7 +23,7 @@ class CasesPage extends GetView<CasesController> {
             top: 70,
             child: InkWell(
               onTap: () {
-                Get.back();
+                Get.offNamed(DiagnosticusRoutes.homeStudent);
               },
               child: Row(
                 children: [
@@ -223,60 +223,59 @@ class _CaseWidget extends StatelessWidget {
                       Get.defaultDialog(
                           title: '',
                           custom: Icon(Icons.close),
-                          content: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
+                          content: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: Text(
                                   'Concluido: $valueComplete%',
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
                                 ),
-                                Text(
-                                  title,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 19),
-                                ),
-                                SizedBox(height: 32),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Professor: '),
-                                    SizedBox(
-                                      width: 12,
+                              ),
+                              Text(
+                                title,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 19),
+                              ),
+                              SizedBox(height: 32),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Professor: '),
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                  Container(
+                                    width: 200,
+                                    child: Text(
+                                      'Gustavo Guanabara',
+                                      textAlign: TextAlign.justify,
                                     ),
-                                    Container(
-                                      width: 200,
-                                      child: Text(
-                                        'Gustavo Guanabara',
-                                        textAlign: TextAlign.justify,
-                                      ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 12),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Descrição: '),
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                  Container(
+                                    width: 200,
+                                    child: Text(
+                                      'Lorem ipsum dolor sit ament, consectur adpsicing Lorem ipsum dolor sit ament, consectur adpsicing',
+                                      textAlign: TextAlign.justify,
                                     ),
-                                  ],
-                                ),
-                                SizedBox(height: 12),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Descrição: '),
-                                    SizedBox(
-                                      width: 12,
-                                    ),
-                                    Container(
-                                      width: 200,
-                                      child: Text(
-                                        'Lorem ipsum dolor sit ament, consectur adpsicing Lorem ipsum dolor sit ament, consectur adpsicing',
-                                        textAlign: TextAlign.justify,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
                           actions: [
                             Padding(
@@ -292,7 +291,7 @@ class _CaseWidget extends StatelessWidget {
                                   actioncase,
                                   style: TextStyle(
                                     color: Colors.green,
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -307,8 +306,8 @@ class _CaseWidget extends StatelessWidget {
                                 child: Text(
                                   'Ver nota',
                                   style: TextStyle(
-                                    color: Colors.blue,
-                                    fontSize: 20,
+                                    color: Color(0xFF005696),
+                                    fontSize: 18,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),

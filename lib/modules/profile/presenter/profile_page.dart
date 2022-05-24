@@ -1,3 +1,4 @@
+import 'package:diagnosticus_action_iv/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'profile_controller.dart';
@@ -22,7 +23,7 @@ class ProfilePage extends GetView<ProfileController> {
             top: 70,
             child: InkWell(
               onTap: () {
-                Get.back();
+                Get.offNamed(DiagnosticusRoutes.homeStudent);
               },
               child: Row(
                 children: [

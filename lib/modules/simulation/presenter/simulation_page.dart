@@ -1,3 +1,4 @@
+import 'package:diagnosticus_action_iv/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:diagnosticus_action_iv/core/widgets/simulation_button.dart';
 import 'package:get/get.dart';
@@ -23,7 +24,7 @@ class SimulationPage extends GetView<SimulationController> {
             top: 70,
             child: InkWell(
               onTap: () {
-                Get.back();
+                Get.offNamed(DiagnosticusRoutes.homeStudent);
               },
               child: Row(
                 children: [
