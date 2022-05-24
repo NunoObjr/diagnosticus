@@ -17,7 +17,7 @@ class HomeStudentPage extends GetView<HomeStudentController> {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 28.0),
+            padding: const EdgeInsets.only(top: 88.0, left: 8, right: 8),
             child: Column(
               children: [
                 Row(
@@ -26,13 +26,13 @@ class HomeStudentPage extends GetView<HomeStudentController> {
                     _IconPhoneWidget(
                       text: 'Novos Casos',
                       color: Colors.white,
-                      icon: Icons.lock_clock_outlined,
-                      iconColor: Colors.blue,
+                      icon: Icons.add_circle_outline,
+                      iconColor: Color(0xFF0B10DB),
                     ),
                     _IconPhoneWidget(
                       text: 'Meus Casos',
                       color: Colors.green,
-                      icon: Icons.schedule_outlined,
+                      icon: Icons.fact_check_outlined,
                       onTap: () {
                         Get.toNamed(DiagnosticusRoutes.cases);
                       },
@@ -44,27 +44,31 @@ class HomeStudentPage extends GetView<HomeStudentController> {
                     )
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    _IconPhoneWidget(
+                Padding(
+                  padding: const EdgeInsets.only(top: 40.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      _IconPhoneWidget(
                         text: 'Buscar Turma',
                         color: Colors.blue,
-                        icon: Icons.group),
-                    _IconPhoneWidget(
-                      text: 'Meu Perfil',
-                      color: Colors.black,
-                      icon: Icons.person,
-                      onTap: () {
-                        Get.toNamed(DiagnosticusRoutes.profile);
-                      },
-                    ),
-                    _IconPhoneWidget(
-                      text: 'Sobre',
-                      color: Colors.grey,
-                      icon: Icons.info,
-                    )
-                  ],
+                        icon: Icons.groups,
+                      ),
+                      _IconPhoneWidget(
+                        text: 'Meu Perfil',
+                        color: Color(0xFF303030),
+                        icon: Icons.person,
+                        onTap: () {
+                          Get.toNamed(DiagnosticusRoutes.profile);
+                        },
+                      ),
+                      _IconPhoneWidget(
+                        text: 'Sobre',
+                        color: Colors.grey,
+                        icon: Icons.info,
+                      )
+                    ],
+                  ),
                 ),
                 Spacer(),
                 Padding(
@@ -136,12 +140,12 @@ class _IconPhoneWidget extends StatelessWidget {
                 width: 80,
                 height: 80,
                 decoration: BoxDecoration(
-                    color: color, borderRadius: BorderRadius.circular(20)),
+                    color: color, borderRadius: BorderRadius.circular(26)),
                 child: Center(
                   child: Icon(
                     icon,
                     color: iconColor ?? Colors.white,
-                    size: 34,
+                    size: 40,
                   ),
                 ),
               ),

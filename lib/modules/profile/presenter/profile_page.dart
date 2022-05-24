@@ -1,3 +1,4 @@
+import 'package:diagnosticus_action_iv/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'profile_controller.dart';
@@ -19,10 +20,10 @@ class ProfilePage extends GetView<ProfileController> {
           ),
           Positioned(
             left: 12,
-            top: 50,
+            top: 70,
             child: InkWell(
               onTap: () {
-                Get.back();
+                Get.offNamed(DiagnosticusRoutes.homeStudent);
               },
               child: Row(
                 children: [
@@ -56,14 +57,17 @@ class ProfilePage extends GetView<ProfileController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 18.0, right: 18, top: 8),
+                      padding: EdgeInsets.only(left: 18.0, right: 18, top: 24),
                       child: Text(
                         'Meu perfil - Aluno',
-                        style: TextStyle(fontSize: 28),
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 24,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -72,13 +76,10 @@ class ProfilePage extends GetView<ProfileController> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 24,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                        left: 18.0,
-                        right: 18,
-                      ),
+                      padding: EdgeInsets.only(left: 18.0, right: 18),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -97,23 +98,27 @@ class ProfilePage extends GetView<ProfileController> {
                         ],
                       ),
                     ),
-                    Spacer(),
+                    SizedBox(
+                      height: 12,
+                    ),
                     Padding(
-                      padding: const EdgeInsets.only(
-                          left: 18.0, right: 18, bottom: 28),
-                      child: Row(
-                        children: [
-                          Text(
-                            'Sair da minha conta',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.logout,
-                            color: Color(0XFF0B10DB),
-                            size: 26,
-                          )
-                        ],
+                      padding: const EdgeInsets.symmetric(horizontal: 18),
+                      child: InkWell(
+                        onTap: () => {},
+                        child: Row(
+                          children: [
+                            Text(
+                              'Sair da minha conta',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            Spacer(),
+                            Icon(
+                              Icons.logout,
+                              color: Color(0XFF0B10DB),
+                              size: 26,
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],
@@ -149,7 +154,7 @@ class _InfoWidget extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 20,
+          height: 24,
         ),
       ],
     );

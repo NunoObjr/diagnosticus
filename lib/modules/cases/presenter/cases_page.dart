@@ -20,10 +20,10 @@ class CasesPage extends GetView<CasesController> {
           ),
           Positioned(
             left: 12,
-            top: 50,
+            top: 70,
             child: InkWell(
               onTap: () {
-                Get.back();
+                Get.offNamed(DiagnosticusRoutes.homeStudent);
               },
               child: Row(
                 children: [
@@ -44,7 +44,7 @@ class CasesPage extends GetView<CasesController> {
             ),
           ),
           Positioned(
-            top: 90,
+            top: 120,
             left: 18.0,
             right: 18.0,
             child: Container(
@@ -61,12 +61,13 @@ class CasesPage extends GetView<CasesController> {
                     height: 12,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      left: 8.0,
-                    ),
+                    padding: const EdgeInsets.only(left: 24, top: 16),
                     child: Text(
                       'Lista de casos',
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -97,36 +98,38 @@ class _ShowCases extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-            padding: const EdgeInsets.only(
-              left: 8.0,
-            ),
-            child: Text(
-              'Turma: Grupo do Guanabara',
-              style: TextStyle(fontSize: 18),
-            )),
-        _CaseWidget(
-          valueComplete: '0',
-          title: 'Caso emergêncial 01',
-        ),
-        _CaseWidget(
-          valueComplete: '25',
-          title: 'Caso emergêncial 02 - URGÊNCIA',
-        ),
-        _CaseWidget(
-          valueComplete: '100',
-          title: 'Caso emergêncial 03 - Ponto extra',
-          nota: true,
-          actioncase: 'Repetir Caso',
-        ),
-        _CaseWidget(
-          valueComplete: '0',
-          title: 'Caso de teste',
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+              padding:
+                  const EdgeInsets.only(bottom: 16.0, left: 8.0, right: 8.0),
+              child: Text(
+                'Turma: Grupo do Guanabara',
+                style: TextStyle(fontSize: 18),
+              )),
+          _CaseWidget(
+            valueComplete: '0',
+            title: 'Caso emergêncial 01',
+          ),
+          _CaseWidget(
+            valueComplete: '25',
+            title: 'Caso emergêncial 02 - URGÊNCIA',
+          ),
+          _CaseWidget(
+            valueComplete: '100',
+            title: 'Caso emergêncial 03 - Ponto extra',
+            nota: true,
+            actioncase: 'Repetir Caso',
+          ),
+          _CaseWidget(
+            valueComplete: '0',
+            title: 'Caso de teste',
+          )
+        ],
+      ),
     );
   }
 }
@@ -136,27 +139,30 @@ class _EmptyCases extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          height: 50,
-        ),
-        Text(
-          'Você ainda não está em nenhuma turma',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        Text('Buscar turma',
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 50,
+          ),
+          Text(
+            'Você ainda não está em nenhuma turma',
             textAlign: TextAlign.center,
-            style: TextStyle(
-                color: Colors.blue,
-                decoration: TextDecoration.underline,
-                fontSize: 20)),
-      ],
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text('Buscar turma',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                  fontSize: 20)),
+        ],
+      ),
     );
   }
 }
@@ -178,12 +184,12 @@ class _CaseWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12),
       child: Container(
         height: 80,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Color.fromARGB(255, 168, 168, 168),
+          borderRadius: BorderRadius.circular(12),
+          color: Color(0xFFCFD4D8),
         ),
         child: Center(
           child: Column(
@@ -198,12 +204,12 @@ class _CaseWidget extends StatelessWidget {
                   SizedBox(
                       child: Text(
                     'Titutlo: $title',
-                    style: TextStyle(),
+                    style: TextStyle(fontSize: 16),
                   )),
                 ],
               ),
               SizedBox(
-                height: 16,
+                height: 22,
               ),
               Row(
                 children: [
@@ -215,20 +221,29 @@ class _CaseWidget extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       Get.defaultDialog(
-                          title: 'Concluido: $valueComplete%',
+                          title: '',
                           custom: Icon(Icons.close),
-                          titlePadding: EdgeInsets.all(0),
                           content: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: Text(
+                                  'Concluido: $valueComplete%',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
                               Text(
                                 title,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 19),
                               ),
-                              SizedBox(
-                                height: 12,
-                              ),
+                              SizedBox(height: 32),
                               Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text('Professor: '),
                                   SizedBox(
@@ -243,10 +258,9 @@ class _CaseWidget extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              SizedBox(
-                                height: 12,
-                              ),
+                              SizedBox(height: 12),
                               Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text('Descrição: '),
                                   SizedBox(
@@ -264,21 +278,39 @@ class _CaseWidget extends StatelessWidget {
                             ],
                           ),
                           actions: [
-                            InkWell(
-                              onTap: () {
-                                if (actioncase == 'Iniciar Caso') {
-                                  Get.toNamed(DiagnosticusRoutes.simulation);
-                                }
-                              },
-                              child: Text(
-                                actioncase,
-                                style: TextStyle(color: Colors.green),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 24.0),
+                              child: InkWell(
+                                onTap: () {
+                                  if (actioncase == 'Iniciar Caso') {
+                                    Get.toNamed(DiagnosticusRoutes.simulation);
+                                  }
+                                },
+                                child: Text(
+                                  actioncase,
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               ),
                             ),
                             if (nota)
-                              Text(
-                                'Ver nota',
-                                style: TextStyle(color: Colors.blue),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 24.0,
+                                  left: 16.0,
+                                ),
+                                child: Text(
+                                  'Ver nota',
+                                  style: TextStyle(
+                                    color: Color(0xFF005696),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               )
                           ]);
                     },
