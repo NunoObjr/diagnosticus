@@ -17,7 +17,7 @@ class HomeStudentPage extends GetView<HomeStudentController> {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 28.0),
+            padding: const EdgeInsets.only(top: 88.0),
             child: Column(
               children: [
                 Row(
@@ -44,27 +44,30 @@ class HomeStudentPage extends GetView<HomeStudentController> {
                     )
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    _IconPhoneWidget(
-                        text: 'Buscar Turma',
-                        color: Colors.blue,
-                        icon: Icons.group),
-                    _IconPhoneWidget(
-                      text: 'Meu Perfil',
-                      color: Colors.black,
-                      icon: Icons.person,
-                      onTap: () {
-                        Get.toNamed(DiagnosticusRoutes.profile);
-                      },
-                    ),
-                    _IconPhoneWidget(
-                      text: 'Sobre',
-                      color: Colors.grey,
-                      icon: Icons.info,
-                    )
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 40.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      _IconPhoneWidget(
+                          text: 'Buscar Turma',
+                          color: Colors.blue,
+                          icon: Icons.group),
+                      _IconPhoneWidget(
+                        text: 'Meu Perfil',
+                        color: Colors.black,
+                        icon: Icons.person,
+                        onTap: () {
+                          Get.toNamed(DiagnosticusRoutes.profile);
+                        },
+                      ),
+                      _IconPhoneWidget(
+                        text: 'Sobre',
+                        color: Colors.grey,
+                        icon: Icons.info,
+                      )
+                    ],
+                  ),
                 ),
                 Spacer(),
                 Padding(

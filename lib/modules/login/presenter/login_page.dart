@@ -53,8 +53,8 @@ class LoginPage extends GetView<LoginController> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          width: 130,
-                          height: 120,
+                          width: 133,
+                          height: 133,
                           decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(blurRadius: 4, spreadRadius: 0.3)
@@ -71,7 +71,7 @@ class LoginPage extends GetView<LoginController> {
                       ],
                     )),
                 Positioned(
-                  bottom: 100,
+                  bottom: 80,
                   left: 10,
                   right: 10,
                   child: SizedBox(

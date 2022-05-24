@@ -112,33 +112,35 @@ class SimulationPage extends GetView<SimulationController> {
                               height: 60,
                               width: 60,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(40),
                                   color: Colors.white),
-                              child: Icon(
-                                Icons.local_hospital,
-                                size: 34,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Image.asset(
+                                    'assets/icons/estotoscopio.png'),
                               ),
                             ),
                             Container(
                               height: 60,
                               width: 60,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(40),
                                   color: Colors.white),
-                              child: Icon(
-                                Icons.schedule,
-                                size: 34,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child:
+                                    Image.asset('assets/icons/prancheta.png'),
                               ),
                             ),
                             Container(
                               height: 60,
                               width: 60,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(40),
                                   color: Colors.white),
-                              child: Icon(
-                                Icons.aspect_ratio,
-                                size: 34,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Image.asset('assets/icons/pulmao.png'),
                               ),
                             )
                           ],
@@ -153,33 +155,33 @@ class SimulationPage extends GetView<SimulationController> {
                               height: 60,
                               width: 60,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(40),
                                   color: Colors.white),
-                              child: Icon(
-                                Icons.science,
-                                size: 34,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Image.asset('assets/icons/tubo.png'),
                               ),
                             ),
                             Container(
                               height: 60,
                               width: 60,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(40),
                                   color: Colors.white),
-                              child: Icon(
-                                Icons.camera,
-                                size: 34,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Image.asset('assets/icons/kit.png'),
                               ),
                             ),
                             Container(
                               height: 60,
                               width: 60,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(40),
                                   color: Colors.white),
-                              child: Icon(
-                                Icons.heart_broken,
-                                size: 34,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Image.asset('assets/icons/coracao.png'),
                               ),
                             )
                           ],
