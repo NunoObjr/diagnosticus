@@ -140,7 +140,7 @@ class _IconPhoneWidget extends StatelessWidget {
                 width: 80,
                 height: 80,
                 decoration: BoxDecoration(
-                    color: color, borderRadius: BorderRadius.circular(20)),
+                    color: color, borderRadius: BorderRadius.circular(26)),
                 child: Center(
                   child: Icon(
                     icon,
