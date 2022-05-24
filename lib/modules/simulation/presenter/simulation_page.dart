@@ -68,34 +68,8 @@ class SimulationPage extends GetView<SimulationController> {
                   SizedBox(
                     height: 16,
                   ),
-                  Container(
-                    width: 300,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.white,
-                    ),
-                    child: Image.asset('assets/avatarPerson.png'),
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.white,
-                    ),
-                    width: 300,
-                    height: 110,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Center(
-                        child: Text(
-                          'Descrição do caso do exame clínico conforme informado pelo professor ',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 16),
-                        ),
-                      ),
-                    ),
+                  Obx(
+                    () => PageContent(tab: controller.selected.value),
                   ),
                   Spacer(),
                   Container(
@@ -119,23 +93,29 @@ class SimulationPage extends GetView<SimulationController> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              SimulationButtonWidget(
-                                index: 0,
-                                selected: 0,
-                                image: 'assets/icons/estotoscopio.png',
-                                onPressed: () => {},
+                              Obx(
+                                () => SimulationButtonWidget(
+                                  index: 0,
+                                  selected: controller.isSelected(0),
+                                  image: 'assets/icons/estotoscopio.png',
+                                  onPressed: () => controller.setSelected(0),
+                                ),
                               ),
-                              SimulationButtonWidget(
-                                index: 1,
-                                selected: 0,
-                                image: 'assets/icons/prancheta.png',
-                                onPressed: () => {},
+                              Obx(
+                                () => SimulationButtonWidget(
+                                  index: 1,
+                                  selected: controller.isSelected(1),
+                                  image: 'assets/icons/prancheta.png',
+                                  onPressed: () => controller.setSelected(1),
+                                ),
                               ),
-                              SimulationButtonWidget(
-                                index: 2,
-                                selected: 0,
-                                image: 'assets/icons/pulmao.png',
-                                onPressed: () => {},
+                              Obx(
+                                () => SimulationButtonWidget(
+                                  index: 2,
+                                  selected: controller.isSelected(2),
+                                  image: 'assets/icons/pulmao.png',
+                                  onPressed: () => controller.setSelected(2),
+                                ),
                               ),
                             ],
                           ),
@@ -146,23 +126,29 @@ class SimulationPage extends GetView<SimulationController> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            SimulationButtonWidget(
-                              index: 3,
-                              selected: 0,
-                              image: 'assets/icons/tubo.png',
-                              onPressed: () => {},
+                            Obx(
+                              () => SimulationButtonWidget(
+                                index: 3,
+                                selected: controller.isSelected(3),
+                                image: 'assets/icons/tubo.png',
+                                onPressed: () => controller.setSelected(3),
+                              ),
                             ),
-                            SimulationButtonWidget(
-                              index: 4,
-                              selected: 0,
-                              image: 'assets/icons/kit.png',
-                              onPressed: () => {},
+                            Obx(
+                              () => SimulationButtonWidget(
+                                index: 4,
+                                selected: controller.isSelected(4),
+                                image: 'assets/icons/kit.png',
+                                onPressed: () => controller.setSelected(4),
+                              ),
                             ),
-                            SimulationButtonWidget(
-                              index: 5,
-                              selected: 0,
-                              image: 'assets/icons/coracao.png',
-                              onPressed: () => {},
+                            Obx(
+                              () => SimulationButtonWidget(
+                                index: 5,
+                                selected: controller.isSelected(5),
+                                image: 'assets/icons/coracao.png',
+                                onPressed: () => controller.setSelected(5),
+                              ),
                             ),
                           ],
                         ),
@@ -179,5 +165,128 @@ class SimulationPage extends GetView<SimulationController> {
         ],
       ),
     );
+  }
+}
+
+class PageContent extends StatelessWidget {
+  final int tab;
+  const PageContent({Key? key, required this.tab}) : super(key: key);
+
+  Widget _getPage() {
+    switch (tab) {
+      case 0:
+        return Column(
+          children: [
+            Container(
+              width: 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+              ),
+              child: Image.asset('assets/avatarPerson.png'),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+              ),
+              width: 300,
+              height: 110,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Center(
+                  child: Text(
+                    'Descrição do caso do exame clínico conforme informado pelo professor ',
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+      case 1:
+        return Column(
+          children: [
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+              ),
+              width: 300,
+              height: 110,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Center(
+                  child: Text(
+                    'Tela para solicitar exames ',
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+      case 2:
+        return Column(
+          children: [
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+              ),
+              width: 300,
+              height: 110,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Center(
+                  child: Text(
+                    'Tela pra fornecer diagnostico',
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+      default:
+        return Column(
+          children: [
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+              ),
+              width: 300,
+              height: 110,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Center(
+                  child: Text(
+                    'Tela em construção',
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _getPage();
   }
 }
